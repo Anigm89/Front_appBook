@@ -1,0 +1,326 @@
+:root {
+  font-family: Avenir, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme:light dark;
+  color:#ccc;
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  text-align: center;
+}
+li{list-style: none;}
+a {
+  font-weight: 500;
+  color: darkturquoise;
+  text-decoration: inherit;
+}
+a:hover {
+  color: darkcyan;
+}
+
+body {
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /*background-color: #1a1a1a;*/
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: #fff;
+}
+button:hover {
+  border-color: transparent;
+  background-color: darkcyan;
+}
+
+.logout:hover{
+  border: 2px solid #00ced1;
+  background-color: #fff;
+  color: #00ced1;
+}
+.logout{background-color: #00ced1;}
+header{
+  height: 40px;
+  border-bottom: 2px solid darkturquoise;
+  align-content: center;
+}
+nav {
+  width: 86%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center
+}
+.content {
+  width: 96%;
+  margin: 0 auto;
+  margin-bottom: 2vh;
+  min-height: 82.5vh;
+}
+.buscadores{
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.buscadores button{
+  margin-left: 10px;
+  background-color: darkturquoise;
+  color: #fff;
+  padding: 5px 10px;
+}
+.buscadores input{
+  border: none;
+  border-bottom: 1px solid darkturquoise;
+  background: none;
+  background-image: url('../src/assets/lupa.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 28px;
+}
+.buscadores input::placeholder{color: #ccc;}
+.buscadores select{
+  border: none;
+  background-color: #00ced1;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Avenir, sans-serif;
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.buscadores select option {
+  background-color: #fff; 
+  border: 2px solid #00ced1; 
+  color: darkturquoise;
+}
+.buscadores select option:hover {
+  background-color: #00ced1; 
+  cursor: pointer;
+}
+
+.buscadores input:focus, .buscadores select:focus{outline: none;}
+
+.home{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap:1.17vw
+}
+ul{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+ 
+}
+.cardsHome {
+  width: 19%;
+  padding: 15px 0;
+}
+
+.cardsHome h2{
+  font-size: 20px;
+}
+.cardsHome p{
+  font-size: 14px;
+}
+.cardsHome img{
+  width: 130px;
+  height: 196px;
+}
+.cardsHome a{color: darkcyan;}
+.cardsHome:hover{
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+}
+.cardsHome a:hover{color: #00ced1;}
+.relacionados{
+  width: 90%;
+  margin: auto;
+  padding: 20px
+}
+.card img{
+  width: 95%;
+  height: 261px;
+  object-fit: contain;
+}
+
+.product-cardId {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 400;
+  font-style: normal;
+  width: 76vw;
+  padding: 20px 0;
+  margin: 3vw auto;
+ /* background-color: #edfbfb; */
+}
+.izq{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.izq img{width: 21vw;}
+.izq h2, .izq h3, .izq h4{ margin: 5px;}
+.izq h2{font-size: 1.8vw;}
+.detalles{
+   display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    width: 45%;
+}
+
+.detalles p{text-align: justify;}
+.botones{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.leido{
+  border: 2px solid #00ced1;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.leido p{margin: 0 5px 0 0; color: #00ced1;}
+.quitar{
+  background-color: #ed5454;
+  color: #fff;
+  margin-left: 10px;
+}
+.quitar:hover{background-color: #c02727; border: 1px solid #c02727;}
+
+.editar{
+  background-color: #3d6cc1;
+  background-image: url('../src/assets/editar.png'); 
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  padding-left: 28px;
+}
+.editar:hover{background-color: #95b6f3;}
+.eliminar{ 
+  background-color:#c02727;  
+  margin-left: 10px;
+  background-image: url('../src/assets/eliminar.png'); 
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  padding-left: 28px;
+}
+.eliminar:hover{ background-color:#ff2424 ;}
+.marcar{background-color: #00ced1;}
+.pendiente{background-color: cadetblue;  margin-left: 10px;}
+.ullistapendientes{gap: 15px;}
+.listadopendientes a{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.listadopendientes a img{
+  width: 150px;
+  height: 216px;
+}
+.listadopendientes button{
+  padding: 0.6em 0.2em;
+}
+
+.resultados{
+  width: 90%;
+  margin: auto;
+}
+
+.error{color: #c02727;}
+
+footer{
+  background-color: #00ced1;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+footer img{
+  width: 20px;
+  margin-left: 15px;
+}
+.pagination{justify-content: space-between;}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: darkcyan;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+@media screen and (max-width:780px){
+  footer{font-size: 11px;}
+  .buscadores{height: 115px;}
+  .cardsHome{width: 49%;}
+  .cardsHome img{width: 98%; height: auto;}
+  .product-cardId{flex-direction: column; width: 90vw;}
+  .detalles{width: 100%;}
+  .izq h2, .relacionados h2{font-size: 22px;}
+  .izq h3{font-size: 18px;}
+  .izq h4{font-size: 16px;}
+  .izq img{width: 50vw;}
+  .detalles p{font-size: 14px;}
+  .slick-list .card img {
+    width: 100%;
+    height: 216px;
+    object-fit: contain;
+  }
+  .leidosperfil{flex-wrap: wrap;}
+  .leidosperfil li{width:33% ;}
+  .card{width: 49%;}
+  .card img{width: 98%; height: fit-content;}
+  .ullistapendientes{gap: 10px;}
+  .listadopendientes{width: 30%;}
+  .listadopendientes a img{width: 98%;height: fit-content; object-fit: contain;}
+  .listadopendientes button{font-size: 11px;}
+  .buscadores form{width: 90%;}
+  .buscadores select{width: 60%;}
+  nav{font-size: 13px;}
+}
