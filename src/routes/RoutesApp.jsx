@@ -16,7 +16,6 @@ function RoutesApp () {
 
     const { usuario } = useContext(AuthContext);
     const { libros } = useContext(LibrosContext);
-    console.log('lr',libros)
 
     return (
     <Router>
