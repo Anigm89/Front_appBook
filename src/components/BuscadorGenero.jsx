@@ -1,6 +1,5 @@
 import { useState, useContext, useEffect} from "react";
 import { LibrosContext } from '../hooks/LibrosContext';
-import { Link } from "react-router-dom";
 
 
 function BuscadorGenero({onSearchGenero }){
@@ -20,6 +19,7 @@ function BuscadorGenero({onSearchGenero }){
 
         fetchData();
     }, [BuscarGenero]);
+
     useEffect(() => {
         if (resultados.length > 0) {
         const obtenerGenerosUnicos = () => {

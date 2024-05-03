@@ -18,7 +18,7 @@ function FormNewUser(){
             const userCredential = await createUserWithEmailAndPassword(auth, email, password)
             const user = userCredential.user;
             
-            const urlApi= 'http://localhost:3000/createUser';
+            const urlApi= import.meta.env.VITE_APP_API_URL + 'createUser';
             await fetch(urlApi, {
                 method: 'POST',
                 headers: {

@@ -1,4 +1,3 @@
-//import { Auth } from '../hooks/AuthContext.jsx'; 
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../fb.js';
 import { signOut } from "firebase/auth";
