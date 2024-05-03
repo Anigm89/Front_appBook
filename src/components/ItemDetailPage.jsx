@@ -18,7 +18,6 @@ const ItemDetailPage = ({item}) => {
   const [isPendiente, setIsPendiente] = useState([]);
   const [pendientesData, setPendientesData] = useState([]);
 
- console.log('user', usuario)
 
   const handleDelete = async () =>{
     try {

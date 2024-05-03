@@ -268,7 +268,6 @@ export const LibrosProvider = ({children, id, token}) => {
             const response = await fetch(urlApi)
             const resData = await response.json();
             setLibros(resData);
- console.log('libro', resData)
             return resData;
         }
         catch(error){

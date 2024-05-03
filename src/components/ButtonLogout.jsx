@@ -18,7 +18,6 @@ const ButtonLogout = () => {
   
     signOut(auth).then(() => {
         navigate("/");
-        console.log("Signed out successfully")
     })
     .catch((error) => {
         console.log('error al cerrar sesion', error)
