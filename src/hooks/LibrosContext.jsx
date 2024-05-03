@@ -10,7 +10,7 @@ export const LibrosProvider = ({children, id, token}) => {
 
     const addBook = async (titulo, subtitulo, autor, sinopsis, imagen, paginas, genero, keywords, token) =>{
         
-        const urlCreate = import.meta.env.VITE_APP_API_URL + 'create';
+        const urlCreate = import.meta.env.VITE_APP_API_URL+'create';
         
         try{  
             const response = await fetch(urlCreate, {
