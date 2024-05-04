@@ -10,7 +10,7 @@ import ReactPaginate from 'react-paginate';
     const { librosLeidos  } = useContext(LibrosContext); 
     const [leidos, setLeidos] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
-    const resultsPerPage = 8; 
+    const resultsPerPage = 14; 
     const pageCount = Math.ceil(leidos.length / resultsPerPage);
     const offset = pageNumber * resultsPerPage;
     const currentPageBooks = leidos.slice(offset, offset + resultsPerPage);

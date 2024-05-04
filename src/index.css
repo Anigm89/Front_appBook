@@ -280,6 +280,7 @@ footer img{
   margin-left: 15px;
 }
 .pagination{justify-content: space-between;}
+.pagination a{cursor: pointer;}
 
 @media (prefers-color-scheme: light) {
   :root {
