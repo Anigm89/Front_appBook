@@ -158,11 +158,14 @@ export const LibrosProvider = ({children, id, token}) => {
         const urlLeidos = import.meta.env.VITE_APP_API_URL + `leidos/${uid}`;
         try{
             const response = await fetch(urlLeidos);
+            if (!response.ok) {
+                throw new Error(`Error al cargar los libros leídos: ${response.status}`);
+            }
             const resData = await response.json();
             return resData
         }
         catch(error){
-            console.log(error)
+            console.error("Error en la llamada a la API:", error);
         }
     };
 
