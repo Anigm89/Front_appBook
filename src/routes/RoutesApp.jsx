@@ -71,7 +71,7 @@ function RoutesApp () {
       <footer>
         <p>Proyecto creado y desarrollado por Ani González Moreno </p>
         <a href="https://github.com/Anigm89/appBook">
-          <img src={import.meta.env.VITE_APP_API_URL + "src/assets/github.png"} alt="github" />
+          <img src="../src/assets/github.png" alt="github" target="_blank" />
         </a>
       </footer>
     </Router>
