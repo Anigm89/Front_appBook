@@ -22,6 +22,7 @@ import ReactPaginate from 'react-paginate';
     const fetchLeidos = async () => {
         try {
             const leidosData = await librosLeidos(uid);
+            console.log('lD', leidosData)
             if (leidosData) {
                 setLeidos(leidosData);
             }
