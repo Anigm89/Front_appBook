@@ -133,7 +133,7 @@ const ItemDetailPage = ({item}) => {
             <div className="botones">
               <div className="leido">
                 <p>leído</p>
-                <img src="../src/assets/cheque.png" alt="" />
+                <img src="../cheque.png" alt="" />
               </div>
               <button onClick={() => handlequitar(item.id)} className="quitar">Quitar de leídos</button>
             </div>
@@ -141,7 +141,7 @@ const ItemDetailPage = ({item}) => {
           {usuario && isPendiente && !isLeido && (
             <div className="leido">
               <p>Libro marcado como pendiente</p>
-              <img src="../src/assets/cheque.png" alt="" />
+              <img src="../cheque.png" alt="" />
             </div>
           )}
           {error && <p className="error">Error: {error}</p>}
