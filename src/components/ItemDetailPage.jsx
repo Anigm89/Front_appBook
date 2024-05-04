@@ -98,7 +98,7 @@ const ItemDetailPage = ({item}) => {
           <h2>{item.titulo} </h2>
           <h3>{item.subtitulo} </h3>
           <h4>{item.autor} </h4>
-          <img src={item.imagen} alt="{item.titulo}" />
+          <img src={item.imagen} alt={item.titulo} />
         </div>
 
         <div className="detalles">
