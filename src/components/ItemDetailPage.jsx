@@ -107,7 +107,7 @@ const ItemDetailPage = ({item}) => {
           <p>Género: {item.genero} </p>
           <p>Palabras clave: <i>{item.keywords} </i></p>
        
-          {usuario && usuario.email === 'admin@ejemplo.es' && (
+          {usuario && usuario.email === 'ani@admin.es' && (
             <div className="botones">
               <Link to={`/editBook/${item.id}`}> <button className="editar">Editar</button></Link>
               <button onClick={handleDelete} className="eliminar">Eliminar</button>
