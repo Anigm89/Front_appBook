@@ -147,7 +147,7 @@ const ItemDetailPage = ({item}) => {
           {error && <p className="error">Error: {error}</p>}
         </div>
       </div>
-      <Relacionados genero={item.genero} autor={item.autor} />
+      <Relacionados genero={item.genero} autor={item.autor} id={item.id} />
     </>
  
   );

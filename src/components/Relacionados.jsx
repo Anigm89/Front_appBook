@@ -9,13 +9,13 @@ const settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 7,
     slidesToScroll: 1
 }
 if (window.innerWidth < 768) { 
     settings.slidesToShow = 2; 
 }
-function Relacionados({genero, autor}){
+function Relacionados({genero, autor, id}){
     const { BuscarLibrosGenero, BuscarLibrosAutor  } = useContext(LibrosContext); 
     const [relacionadosgenero, setRelacionadosgenero] = useState([]);
     const [ relacionadosautor, setRelacionadosautor] = useState([]);
@@ -41,14 +41,15 @@ function Relacionados({genero, autor}){
                 try {
                     const relacionadosautor = await BuscarLibrosAutor(autor);
                     if (relacionadosautor) {
-                        setRelacionadosautor(relacionadosautor);
+                        const filtrados= relacionadosautor[0].filter(relacionado => relacionado.id !== id);
+                        setRelacionadosautor(filtrados);
                     }
                 } catch (error) {
                     console.error("Error fetching leidos:", error);
                 }
             };
             fetchAutor();
-          }, [autor]);
+          }, [autor, id]);
    
           
             
@@ -59,7 +60,7 @@ function Relacionados({genero, autor}){
              {relacionadosgenero && relacionadosgenero.length > 0 ? (
                 <Slider {...settings}>
                     {relacionadosgenero[0].slice(1, 10).map((elem, i) => (
-                         <div key={i} className="card">
+                         <div key={i} className="card cardRel">
                             <Link to={`/${elem.id}`}>
                                 <img src={elem.imagen} alt={elem.titulo} />
                             </Link>
@@ -73,10 +74,10 @@ function Relacionados({genero, autor}){
         </div>
         <div className="relacionados">
              <h2>Otros libros del autor </h2>
-             {relacionadosautor && relacionadosautor.length > 0 ?
+             {relacionadosautor && relacionadosautor.length > 0  ?
              (
                 <Slider {...settings}>
-                   {relacionadosautor[0].map((elem, i) =>(
+                   {relacionadosautor.map((elem, i) =>(
                         <div key={i} className="card">
                             <Link to={`/${elem.id}`}>
                                 <img src={elem.imagen} alt={elem.titulo} />

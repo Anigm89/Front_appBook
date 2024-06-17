@@ -167,10 +167,16 @@ ul{
   margin: auto;
   padding: 20px
 }
+.card{
+  min-width: 14.2%;
+}
 .card img{
   width: 95%;
-  height: 261px;
-  object-fit: contain;
+  height: 17vw;
+  object-fit: cover;
+}
+.cardRel img{
+object-fit: contain;
 }
 
 .product-cardId {
@@ -301,7 +307,7 @@ footer img{
   footer{font-size: 11px;}
   .buscadores{height: 115px;}
   .cardsHome{width: 49%;}
-  .cardsHome img{width: 98%; height: auto;}
+  .cardsHome img{width: 98%; height: 60vw;}
   .product-cardId{flex-direction: column; width: 90vw;}
   .detalles{width: 100%;}
   .izq h2, .relacionados h2{font-size: 22px;}
@@ -316,11 +322,12 @@ footer img{
   }
   .leidosperfil{flex-wrap: wrap;}
   .leidosperfil li{width:33% ;}
+  .leidosperfil li img{height: 40vw;}
   .card{width: 49%;}
-  .card img{width: 98%; height: fit-content;}
+  .card img{width: 98%; height: 65vw;}
   .ullistapendientes{gap: 10px;}
   .listadopendientes{width: 30%;}
-  .listadopendientes a img{width: 98%;height: fit-content; object-fit: contain;}
+  .listadopendientes a img{width: 100%;height: 40vw; object-fit: cover;}
   .listadopendientes button{font-size: 11px;}
   .buscadores form{width: 90%;}
   .buscadores select{width: 60%;}
