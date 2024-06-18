@@ -26,7 +26,8 @@ function Relacionados({genero, autor, id}){
                 try {
                     const relacionadosgenero = await BuscarLibrosGenero(generos[0]);
                     if (relacionadosgenero) {
-                        setRelacionadosgenero(relacionadosgenero);
+                        const filtrados = relacionadosgenero[0].filter(relacionado => relacionado.id !== id )
+                        setRelacionadosgenero(filtrados);
                     }
                 } catch (error) {
                     console.error("Error fetching leidos:", error);
@@ -59,7 +60,7 @@ function Relacionados({genero, autor, id}){
              <h2>Otros libros de {generos[0]} </h2>
              {relacionadosgenero && relacionadosgenero.length > 0 ? (
                 <Slider {...settings}>
-                    {relacionadosgenero[0].slice(1, 10).map((elem, i) => (
+                    {relacionadosgenero.slice(1, 10).map((elem, i) => (
                          <div key={i} className="card cardRel">
                             <Link to={`/${elem.id}`}>
                                 <img src={elem.imagen} alt={elem.titulo} />
