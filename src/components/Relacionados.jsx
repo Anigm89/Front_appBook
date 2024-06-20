@@ -20,18 +20,12 @@ function Relacionados({genero, autor, id}){
     const [relacionadosgenero, setRelacionadosgenero] = useState([]);
     const [ relacionadosautor, setRelacionadosautor] = useState([]);
 
-    //const generos= genero.split(',').map(palabra => palabra.trim().toLowerCase());
     const generos = useMemo(() => genero.split(',').map(palabra => palabra.trim().toLowerCase()), [genero]);
 
         useEffect(() => {
             const fetchGenero = async () => {
                 try {
-                  /*  const relacionadosgenero = await BuscarLibrosGenero(generos[0]);
-                    if (relacionadosgenero) {
-                        const filtrados = relacionadosgenero[0].filter(relacionado => relacionado.id !== id )
-                        setRelacionadosgenero(filtrados);
-                    }
-                        */
+                  
                     let todosGeneros = [];
                     let idSet = new Set();
 
