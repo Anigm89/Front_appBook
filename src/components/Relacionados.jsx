@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect} from "react";
+import { useState, useContext, useEffect, useMemo} from "react";
 import { Link } from "react-router-dom";
 import { LibrosContext } from '../hooks/LibrosContext';
 import Slider from 'react-slick';
@@ -20,22 +20,42 @@ function Relacionados({genero, autor, id}){
     const [relacionadosgenero, setRelacionadosgenero] = useState([]);
     const [ relacionadosautor, setRelacionadosautor] = useState([]);
 
-    const generos= genero.split(',').map(palabra => palabra.trim().toLowerCase());
+    //const generos= genero.split(',').map(palabra => palabra.trim().toLowerCase());
+    const generos = useMemo(() => genero.split(',').map(palabra => palabra.trim().toLowerCase()), [genero]);
+
         useEffect(() => {
-            const fetch = async () => {
+            const fetchGenero = async () => {
                 try {
-                    const relacionadosgenero = await BuscarLibrosGenero(generos[0]);
+                  /*  const relacionadosgenero = await BuscarLibrosGenero(generos[0]);
                     if (relacionadosgenero) {
                         const filtrados = relacionadosgenero[0].filter(relacionado => relacionado.id !== id )
                         setRelacionadosgenero(filtrados);
                     }
+                        */
+                    let todosGeneros = [];
+                    let idSet = new Set();
+
+                    for(const gen of generos){
+                        const relacionadosGen = await BuscarLibrosGenero(gen);
+
+                        if (relacionadosGen && relacionadosGen.length > 0) {
+                            const filtrados = relacionadosGen[0]
+                                    .filter(relacionado => relacionado.id !== id && !idSet.has(relacionado.id)) //filtro para que no se repita el mismo libro
+                                    .sort(() => 0.5 - Math.random()) // aleatorios
+                                    .slice(0,3) // solo coge 3 de cada genero
+                            filtrados.forEach(libro => idSet.add(libro.id));
+                            todosGeneros = [...todosGeneros, ...filtrados]
+                        
+                        }
+                    }
+                    setRelacionadosgenero(todosGeneros);
                 } catch (error) {
                     console.error("Error fetching leidos:", error);
                 }
             };
-            fetch();
-            
-          }, [generos]);
+            fetchGenero();
+                        
+          }, [generos, BuscarLibrosGenero, id]);
 
           useEffect(() => {
             const fetchAutor = async () => {
@@ -57,10 +77,10 @@ function Relacionados({genero, autor, id}){
     return(
         <>
         <div className="relacionados">
-             <h2>Otros libros de {generos[0]} </h2>
+             <h2>Otros libros de {generos.join(', ')} </h2>
              {relacionadosgenero && relacionadosgenero.length > 0 ? (
                 <Slider {...settings}>
-                    {relacionadosgenero.slice(1, 10).map((elem, i) => (
+                    {relacionadosgenero.map((elem, i) => (
                          <div key={i} className="card cardRel">
                             <Link to={`/${elem.id}`}>
                                 <img src={elem.imagen} alt={elem.titulo} />
