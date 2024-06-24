@@ -97,6 +97,8 @@ const Home = () => {
       />
       </div>
       <div className="resultados">
+        {buscadosT && buscadosT[0] == 0 && <p>No se han encontrado resultados</p>}
+
         { buscadosT  &&  buscadosT.length > 0 ?
               <>
               <ul>
@@ -113,7 +115,6 @@ const Home = () => {
               </>
               : null
         }
-        {buscadosT && buscadosT[0] == 0 && <p>No se han encontrado resultados</p>}
       </div>
       <div className="resultados">
         { resultadosGenero  &&  resultadosGenero.length > 0 ?
@@ -135,6 +136,8 @@ const Home = () => {
         {resultadosGenero && resultadosGenero[0] === 0 && <p>No se han encontrado resultados</p>}
       </div>
       <div className="resultados">
+        {resultKW && resultKW[0] == 0 && <p>No se han encontrado resultados</p>}
+
         { resultKW  &&  resultKW.length > 0 ?
           <>
           <ul>
@@ -151,7 +154,6 @@ const Home = () => {
           </>
           : null
         }
-       {resultKW && resultKW[0] === 0 && <p>No se han encontrado resultados</p>}
       
       </div>
     </>
