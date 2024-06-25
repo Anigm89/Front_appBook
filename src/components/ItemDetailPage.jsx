@@ -3,7 +3,7 @@ import { useContext, useState, useEffect} from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { LibrosContext } from '../hooks/LibrosContext';
 import Relacionados from "./Relacionados.jsx";
-
+import Valoraciones from "./Valoraciones.jsx";
 
 
 const ItemDetailPage = ({item}) => {
@@ -145,6 +145,9 @@ const ItemDetailPage = ({item}) => {
             </div>
           )}
           {error && <p className="error">Error: {error}</p>}
+          {usuario &&  isLeido &&
+          <Valoraciones /> 
+          }       
         </div>
       </div>
       <Relacionados genero={item.genero} autor={item.autor} id={item.id} />
