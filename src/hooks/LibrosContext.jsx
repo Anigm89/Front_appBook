@@ -265,6 +265,40 @@ export const LibrosProvider = ({children, id, token}) => {
         }
     };
 
+    const valorado = async (id_libro, uid, puntos, token) =>{
+        const urlValorados = 'http://localhost:3000/valorados';
+        try{  
+            const response = await fetch(urlValorados, {
+                method: 'POST', 
+                headers: {
+                    'Authorization': `Bearer ${token}`, 
+                    'Content-Type': 'application/json', 
+                },
+                body: JSON.stringify({id_libro, uid, puntos}), 
+            });
+            if(response.ok){
+             const data = await response.json();
+             setError(null)
+            }
+        }
+        catch(err){
+            console.log(err)
+            setError(err)
+        }
+    };
+
+    const getValor = async (id_libro, uid) => {
+        const urlValor= `http://localhost:3000/valorado/${id_libro}/${uid}`;
+        try{
+            const response = await fetch(urlValor);
+            const resData = await response.json();
+            return resData;
+        }
+        catch(error){
+            console.log(error)
+            setError('No se ha podido obtener la valoración');
+        }
+    };
     const  fetchData = async () =>{
         const urlApi = import.meta.env.VITE_APP_API_URL;
         try{
@@ -283,7 +317,7 @@ export const LibrosProvider = ({children, id, token}) => {
     }, [])
 
     return(
-        <LibrosContext.Provider value={{libros,fetchData, addBook, updateBook, eliminarLibro, MarcarLeido, MarcarPendiente, EliminarPendiente, librosLeidos, eliminarLeido, librosPendientes, Buscartitulo, BuscarGenero, BuscarLibrosGenero, BuscarLibrosAutor, BuscarKeywords}} >
+        <LibrosContext.Provider value={{libros,fetchData, addBook, updateBook, eliminarLibro, MarcarLeido, MarcarPendiente, EliminarPendiente, librosLeidos, eliminarLeido, librosPendientes, Buscartitulo, BuscarGenero, BuscarLibrosGenero, BuscarLibrosAutor, BuscarKeywords,  valorado, getValor}} >
             {children}
         </LibrosContext.Provider>
     )

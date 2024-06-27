@@ -146,7 +146,7 @@ const ItemDetailPage = ({item}) => {
           )}
           {error && <p className="error">Error: {error}</p>}
           {usuario &&  isLeido &&
-          <Valoraciones /> 
+            <Valoraciones id_libro={item.id} uid={usuario.uid} token={usuario.accessToken} /> 
           }       
         </div>
       </div>
