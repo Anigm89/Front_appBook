@@ -266,7 +266,7 @@ export const LibrosProvider = ({children, id, token}) => {
     };
 
     const valorado = async (id_libro, uid, puntos, token) =>{
-        const urlValorados = import.meta.env.VITE_APP_API_URL +'/valorados';
+        const urlValorados = import.meta.env.VITE_APP_API_URL + '/valorados';
         try{  
             const response = await fetch(urlValorados, {
                 method: 'POST', 
@@ -288,7 +288,7 @@ export const LibrosProvider = ({children, id, token}) => {
     };
 
     const getValor = async (id_libro, uid) => {
-        const urlValor= import.meta.env.VITE_APP_API_URL +`/valorado/${id_libro}/${uid}`;
+        const urlValor= import.meta.env.VITE_APP_API_URL + `/valorado/${id_libro}/${uid}`;
         try{
             const response = await fetch(urlValor);
             const resData = await response.json();
