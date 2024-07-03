@@ -71,7 +71,7 @@ const Home = () => {
     </div>
      <div className="todos" ref={divRef}>
         <ul className="home">
-        {
+        { books && books.length > 0 ?
            currentPageBooks.map(item => (
               <li key={item.id} className="cardsHome">
                 <Link to={`/${item.id}`}>
@@ -81,6 +81,11 @@ const Home = () => {
                 </Link>
               </li>
             ))
+          :
+          <>
+            <p>Cargando el back</p>
+            <img src="loading.gif" alt="cargando gif" />
+          </>
         }
         </ul>
       
