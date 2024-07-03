@@ -307,9 +307,10 @@ footer img{
   footer{font-size: 11px;}
   .buscadores{height: 115px;}
   .cardsHome{width: 49%;}
-  .cardsHome img{width: 98%; height: 60vw;}
+  .cardsHome img{width: 98%; height: 60vw; object-fit: contain;}
   .product-cardId{flex-direction: column; width: 90vw;}
   .detalles{width: 100%;}
+  .izq{width: 100%;}
   .izq h2, .relacionados h2{font-size: 22px;}
   .izq h3{font-size: 18px;}
   .izq h4{font-size: 16px;}
