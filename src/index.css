@@ -167,7 +167,13 @@ ul{
   height: 12vw;
   object-fit: contain;
 }
-
+.todos .relacionados {
+  width: 86%;
+  box-shadow: 1px 2px 5px #00ced1;
+  margin: 1.5vw auto;
+  padding: 20px 34px;
+  border-radius: 15px;
+}
 .relacionados{
   width: 90%;
   margin: auto;
