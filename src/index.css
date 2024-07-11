@@ -288,6 +288,13 @@ footer img{
 }
 .pagination{justify-content: space-between;}
 .pagination a{cursor: pointer;}
+.load{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

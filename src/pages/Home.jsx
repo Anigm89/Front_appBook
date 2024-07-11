@@ -82,10 +82,10 @@ const Home = () => {
               </li>
             ))
           :
-          <>
+          <div className="load">
             <p>Cargando el back</p>
             <img src="loading.gif" alt="cargando gif" />
-          </>
+          </div>
         }
         </ul>
       
