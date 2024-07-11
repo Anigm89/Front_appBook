@@ -299,6 +299,19 @@ export const LibrosProvider = ({children, id, token}) => {
             setError('No se ha podido obtener la valoración');
         }
     };
+    const fetchMejores = async () => {
+        const urlMejores = import.meta.env.VITE_APP_API_URL + 'mejorvalorados';
+        try{
+            const response = await fetch(urlMejores);
+            const resData = await response.json();
+            return resData; 
+        }
+        catch(error){
+            console.log(error)
+            setError('No se han podido obtener los libros mejor valorados');
+        }
+    };
+
     const  fetchData = async () =>{
         const urlApi = import.meta.env.VITE_APP_API_URL;
         try{
@@ -317,7 +330,7 @@ export const LibrosProvider = ({children, id, token}) => {
     }, [])
 
     return(
-        <LibrosContext.Provider value={{libros,fetchData, addBook, updateBook, eliminarLibro, MarcarLeido, MarcarPendiente, EliminarPendiente, librosLeidos, eliminarLeido, librosPendientes, Buscartitulo, BuscarGenero, BuscarLibrosGenero, BuscarLibrosAutor, BuscarKeywords, valorado, getValor}} >
+        <LibrosContext.Provider value={{libros,fetchData, addBook, updateBook, eliminarLibro, MarcarLeido, MarcarPendiente, EliminarPendiente, librosLeidos, eliminarLeido, librosPendientes, Buscartitulo, BuscarGenero, BuscarLibrosGenero, BuscarLibrosAutor, BuscarKeywords, valorado, getValor, fetchMejores}} >
             {children}
         </LibrosContext.Provider>
     )
