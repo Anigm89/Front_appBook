@@ -47,8 +47,8 @@ function RoutesApp () {
            
             {libros.map(item => (
               <Route key={item.id} path={`/${item.id}`} element={<ItemDetailPage item={item} />} />
-            ))
-          }
+              ))
+            }
         
             {isLoggedIn() ? (
                 <>
@@ -56,15 +56,15 @@ function RoutesApp () {
                     <Route path="/editBook/:id" element={<EditarLibro token={usuario.accessToken} />} />
                     <Route path="/profile" element={<Profileuser uid={usuario.uid} token={usuario.accessToken} />} />
                 </>
-            ) : (
+              ) : (
                 <>
                     <Route path="/create" element={<Navigate to="/login" />} />
                     <Route path="/editBook/:id" element={<Navigate to="/login" />} />
                     <Route path="/profile" element={<Navigate to="/login" />} />
 
                 </>
-
-            )}         
+              )
+            }         
           </Routes>
         }
       </div>
