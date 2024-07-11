@@ -6,6 +6,7 @@ import BuscadorGenero from "../components/BuscadorGenero";
 import BuscadorKeyWords from "../components/BuscadorKeyWords";
 import ReactPaginate from 'react-paginate';
 import MejorValorados from "../components/MejorValorados";
+import MasLeidos from "../components/MasLeidos";
 
 const Home = () => {
 
@@ -71,6 +72,7 @@ const Home = () => {
     </div>
      <div className="todos" ref={divRef}>
        <MejorValorados />
+       <MasLeidos />
         <ul className="home">
         { books && books.length > 0 ?
            currentPageBooks.map(item => (

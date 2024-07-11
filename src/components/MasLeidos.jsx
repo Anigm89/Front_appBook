@@ -16,34 +16,34 @@ if (window.innerWidth < 768) {
     settings.slidesToShow = 2; 
 }
 
-function MejorValorados(){
-    const { fetchMejores } =  useContext(LibrosContext);
+function MasLeidos(){
+    const { fetchMasleidos } =  useContext(LibrosContext);
     const [error, setError] = useState(null);
-    const [mejores, setMejores] = useState([])
+    const [masleidos, setMasleidos] = useState([])
 
     useEffect(() => {
-        const getMejores = async () => {
+        const getMasLeidos = async () => {
             try{
-                const mejores = await fetchMejores();
-                setMejores(mejores);
+                const masleidos = await fetchMasleidos();
+                setMasleidos(masleidos);
             }
             catch (error) {
-                setError('No se han encontrado');
+                setError('No se han encontrado', error);
             }
         }
-        getMejores();
+        getMasLeidos();
     },[])
 
 
     return(
         <div className="relacionados">
-             <h2>Top 10 de mejor valorados por los usuarios </h2>
-             {mejores && mejores.length > 0  ?
+             <h2>Top 10: libros más leídos por los usuarios </h2>
+             {masleidos && masleidos.length > 0  ?
              (
                 <Slider {...settings}>
-                   {mejores.map((elem, i) =>(
+                   {masleidos.map((elem, i) =>(
                         <div key={i} className="card">
-                            <Link to={`/${elem.id_libro}`}>
+                            <Link to={`/${elem.id}`}>
                                 <img src={elem.imagen} alt={elem.titulo} title={elem.titulo}  />
                             </Link>
                         </div>
@@ -51,11 +51,11 @@ function MejorValorados(){
                 </Slider>
              )
                 :
-                <p>No se han encontrado libros del mismo autor</p>
+                <p>No se han encontrado los libros más leidos por los usuarios</p>
              }
         </div>
     )
 
 }
-export default MejorValorados;
+export default MasLeidos;
 
