@@ -28,7 +28,7 @@ function MejorValorados(){
                 setMejores(mejores);
             }
             catch (error) {
-                setError('No');
+                setError('No se han encontrado');
             }
         }
         getMejores();
