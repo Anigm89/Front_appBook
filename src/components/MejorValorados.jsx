@@ -37,7 +37,7 @@ function MejorValorados(){
 
     return(
         <div className="relacionados">
-             <h2>Top 10 de mejor valorados por los usuarios </h2>
+             <h2>Top 10: mejor valorados por los usuarios </h2>
              {mejores && mejores.length > 0  ?
              (
                 <Slider {...settings}>
@@ -51,7 +51,7 @@ function MejorValorados(){
                 </Slider>
              )
                 :
-                <p>No se han encontrado libros del mismo autor</p>
+                <p>No se han encontrado libros valorados con 5 puntos</p>
              }
         </div>
     )
