@@ -41,8 +41,11 @@ function RoutesApp () {
             </nav>
         </header>
         <div className="content">
-        {!libros 
-        ? (<div>cargando...</div>) 
+        {libros.length == 0 ? 
+          (<div className="load">
+            <p>Cargando el back</p>
+            <img src="loading.gif" alt="cargando gif"  width="10vw"/>
+          </div>) 
         : 
           <Routes>
             <Route path="/" element={<Home />} />
