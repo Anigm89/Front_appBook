@@ -44,7 +44,7 @@ function RoutesApp () {
         {libros.length == 0 ? 
           (<div className="load">
             <p>Cargando el back</p>
-            <img src="loading.gif" alt="cargando gif"  width="10vw"/>
+            <img src="loading.gif" alt="cargando gif" />
           </div>) 
         : 
           <Routes>
