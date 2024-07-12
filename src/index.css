@@ -125,7 +125,12 @@ nav {
 }
 
 .buscadores input:focus, .buscadores select:focus{outline: none;}
-
+.todos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .home{
   display: flex;
   flex-wrap: wrap;
@@ -307,6 +312,25 @@ footer img{
   justify-content: center;
   margin: auto;
 }
+.ir{
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #00ced1;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: #fff;
+}
+.ir:hover {
+  border: 2px solid #00ced1;
+  background-color: transparent;
+  color: #00ced1;
+}
+
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -351,5 +375,6 @@ footer img{
   .listadopendientes button{font-size: 11px;}
   .buscadores form{width: 90%;}
   .buscadores select{width: 60%;}
-  nav{font-size: 13px;}
+  nav{font-size: 11px;}
+  .logout{padding: 0.4em 1em;}
 }

@@ -11,6 +11,8 @@ import FormLogIn from "../components/FormLogIn.jsx";
 import FormNewUser from '../components/FormNewUser.jsx';
 import ButtonLogout from "../components/ButtonLogout.jsx";
 import EditarLibro from "../components/EditarLibro.jsx";
+import Books from "../pages/Books.jsx";
+
 
 function RoutesApp () {
 
@@ -23,6 +25,8 @@ function RoutesApp () {
         <header>
             <nav>
               <Link to="/">Inicio</Link>
+              <Link to="/books">Libros</Link>
+
               {!usuario ?
               <>
                 <Link to="/login">LogIn</Link>
@@ -42,6 +46,7 @@ function RoutesApp () {
         : 
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/books" element={<Books />} />
             <Route path="/login" element={<FormLogIn />} />
             <Route path="/registro" element={<FormNewUser />} />
            
