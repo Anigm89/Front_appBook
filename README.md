@@ -6,7 +6,7 @@ También puede añadir libros si todavía no están en la bbdd de la aplicación
 AppBook: https://appbooks.netlify.app/
 
 ## Repositorios 
-En este repositorio está la prate front-end.<br>
+En este repositorio está la parte front-end.<br>
 Para el back-end es este: https://github.com/Anigm89/Back_appBook <br>
 
 ## A futuro
